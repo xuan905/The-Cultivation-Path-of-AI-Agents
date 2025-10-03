@@ -1,0 +1,22 @@
+# requirements.txt
+# 本檔案列出本專案所需的主要 Python 套件
+
+# 基本套件
+os
+json
+collections
+random
+re
+datetime
+typing
+
+# 進階功能
+requests
+dotenv
+langchain_openai
+langchain
+scikit-learn
+sympy
+deep-translator
+
+# 如有其他需求請依實際情況補充
