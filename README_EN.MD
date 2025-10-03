@@ -1,3 +1,4 @@
+
 # The Cultivation Path of AI Agents
 
 ## Project Structure
@@ -63,3 +64,27 @@ The-Cultivation-Path-of-AI-Agents/
 See the requirements.txt file for the main Python dependencies required by this project.
 
 ---
+## GROQ Registration and API Key Setup
+
+1. Go to the official GROQ website and register an account: https://groq.com/
+2. After logging in, navigate to your dashboard and apply for an API Key. Copy the key.
+3. Create a `.env` file in the project root directory with the following content:
+
+   ```env
+   GROQ_API_KEY=your_groq_api_key
+   LLM_MODEL=llama-3.1-8b-instant  # You can change the model name as needed
+   OPENAI_API_BASE=https://api.groq.com/openai/v1
+   ```
+
+4. The program will automatically read these environment variables:
+   - `GROQ_API_KEY`: Your GROQ platform API key
+   - `LLM_MODEL`: The LLM model to use (default: llama-3.1-8b-instant)
+   - `OPENAI_API_BASE`: API server endpoint (default: GROQ OpenAI-compatible endpoint)
+
+5. Example usage in Python:
+   ```python
+   import os
+   GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+   LLM_MODEL = os.getenv("LLM_MODEL", "llama-3.1-8b-instant")
+   OPENAI_API_BASE = os.getenv("OPENAI_API_BASE", "https://api.groq.com/openai/v1")
+   ```

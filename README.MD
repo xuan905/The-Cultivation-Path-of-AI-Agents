@@ -63,3 +63,27 @@ The-Cultivation-Path-of-AI-Agents/
 ```
 
 requirements.txt
+## GROQ 註冊與 API Key 設定說明
+
+1. 前往 GROQ 官方網站註冊帳號：https://groq.com/
+2. 登入後進入個人後台，申請並複製您的 API Key。
+3. 在本專案根目錄下建立 `.env` 檔案，內容如下：
+
+	```env
+	GROQ_API_KEY=你的_groq_api_key
+	LLM_MODEL=llama-3.1-8b-instant  # 可依需求更換模型名稱
+	OPENAI_API_BASE=https://api.groq.com/openai/v1
+	```
+
+4. 程式會自動讀取這些環境變數：
+	- `GROQ_API_KEY`：GROQ 平台的 API 金鑰
+	- `LLM_MODEL`：指定使用的 LLM 模型（預設為 llama-3.1-8b-instant）
+	- `OPENAI_API_BASE`：API 伺服器端點（預設為 GROQ OpenAI 兼容端點）
+
+5. 讀取方式範例（Python）：
+	```python
+	import os
+	GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+	LLM_MODEL = os.getenv("LLM_MODEL", "llama-3.1-8b-instant")
+	OPENAI_API_BASE = os.getenv("OPENAI_API_BASE", "https://api.groq.com/openai/v1")
+	```
